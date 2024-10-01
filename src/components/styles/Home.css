@@ -1,0 +1,19 @@
+* {
+    font-family: "Readex Pro", sans-serif;
+  }
+  
+  .Home {
+    text-align: center;
+  }
+  
+  .background-container {
+    background-image: url('../images/Farmer.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
