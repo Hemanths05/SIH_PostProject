@@ -1,7 +1,10 @@
+/* Main Content Styles */
 .main-content {
-  width: auto;
+  margin-left: 320px; /* Leave space for the fixed sidebar */
   padding: 40px;
   background-color: white;
+  height: 100vh; /* Full height of the viewport */
+  box-sizing: border-box; /* Include padding in the height */
 }
 
 .progress-bar {
@@ -39,7 +42,7 @@ h3 {
   border: 1px solid #ddd;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0px 4px 4px 0px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   transition: border-color 0.3s;
 }

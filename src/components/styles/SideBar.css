@@ -1,57 +1,55 @@
 /* Sidebar Styles */
 .sidebar {
-    position: relative; /* Sidebar stays fixed */
-    top: 0;
-    left: 0;
-    width: 300px; /* Set a fixed width for the sidebar */
-    height: 100%; /* Full height of the screen */
-    background-color: #4252ab;
-    padding: 20px;
-    box-sizing: border-box; /* Include padding in the width */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1; /* Keeps sidebar above the content */
-    color: white; /* Ensure text is visible */
-  }
-  
-  .sidebar img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .sidebar h2 {
-    color: green;
-    font-size: 36px; /* Reduced for a cleaner look */
-    margin: 20px 0;
-    text-align: center;
-  }
-  
-  .sidebar h2 span {
-    display: block;
-  }
-  
-  .sidebar p {
-    font-size: 18px;
-    color: #ffffff;
-    margin: 20px 0;
-    
-  }
-  
-  .sidebar a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .sidebar a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Positioning the footer (login link) at the bottom */
-  .sidebar .footer {
-    margin-top: auto;
-    text-align: center;
-    padding-bottom: 20px;
-  }
-  
+  position: fixed; /* Keep the sidebar fixed */
+  top: 0;
+  left: 0;
+  width: 300px; /* Set a fixed width for the sidebar */
+  height: 100%; /* Full height of the screen */
+  background-color: #4252ab; /* Sidebar background color */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the width */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out the contents */
+  z-index: 1; /* Keeps sidebar above the content */
+  color: white; /* Ensure text is visible */
+}
+
+.sidebar img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sidebar h2 {
+  color: green;
+  font-size: 36px; /* Reduced for a cleaner look */
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sidebar h2 span {
+  display: block;
+}
+
+.sidebar p {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Positioning the footer (login link) at the bottom */
+.sidebar .footer {
+  margin-top: auto;
+  text-align: center;
+  padding-bottom: 20px;
+}

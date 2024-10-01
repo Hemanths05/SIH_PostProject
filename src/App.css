@@ -1,33 +1,19 @@
 /* Container for the layout */
 .container {
   display: flex;
-  min-height: 100vh;
+  min-height: 100vh; /* Full height for the container */
   margin: 0;
   padding: 0;
 }
 
 /* Sidebar styles */
 .sidebar {
-  position: fixed;
-  overflow-y: auto;
-  width: 300px; /* Adjust width as needed */
-  background-color: #2c3e50;
-  color: white;
-  padding: 20px;
-  box-sizing: border-box;
-  justify-content: space-between; /* Include padding and border in the width */
-}
-
-.main-sec {
-  margin-left: 300px;
+  /* The sidebar styles are already defined above */
 }
 
 /* Main section styles */
-.main-section {
-  flex: 1;
-  /* padding: 20px; */
-  /* background-color: #ddd6d6; */
-  box-sizing: border-box; /* Include padding in the width */
+.main-sec {
+  margin-left: 300px; /* Leave space for the sidebar */
 }
 
 /* Full page layout for home and dashboard */
@@ -44,21 +30,22 @@
 /* Smaller screen adjustments */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack sidebar and main content vertically on smaller screens */
+      flex-direction: column; /* Stack sidebar and main content vertically on smaller screens */
   }
 
   .sidebar {
-    width: 100%; /* Sidebar takes full width on small screens */
-    margin-bottom: 10px; /* Add spacing between sidebar and main content */
+      width: 100%; /* Sidebar takes full width on small screens */
+      margin-bottom: 10px; /* Add spacing between sidebar and main content */
   }
 
-  .main-section {
-    margin: 0; /* Remove left margin */
+  .main-sec {
+      margin: 0; /* Remove left margin */
   }
 }
 
+/* Uncomment if you want additional padding for very small screens */
 /* @media (max-width: 480px) {
   .main-section {
-    padding: 10px;
+      padding: 10px;
   }
 } */

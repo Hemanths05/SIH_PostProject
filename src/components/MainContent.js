@@ -38,12 +38,12 @@ function MainContent() {
             <input
               type="radio"
               name="account"
-              value="farmer"
-              checked={selectedAccountType === 'farmer'}
+              value="consumer"
+              checked={selectedAccountType === 'consumer'}
               onChange={handleAccountTypeChange}
             />
-            Farmer
-            <div className="selectbar">Sell produce directly, create contracts, and access buyers.</div>
+            Consumer
+            <div className="selectbar">Filter and view eligible post office Schemes based on your age,income and gender.</div>
           </label>
         </div>
 
@@ -52,28 +52,16 @@ function MainContent() {
             <input
               type="radio"
               name="account"
-              value="buyer"
-              checked={selectedAccountType === 'buyer'}
+              value="postServiceProvider"
+              checked={selectedAccountType === 'postServiceProvider'}
               onChange={handleAccountTypeChange}
             />
-            Buyer
-            <div className="selectbar">Purchase produce, create contracts, and connect with farmers.</div>
+           Post Service Person
+            <div className="selectbar">View Analytics and graph showing gender distribution age and income based data of customers.</div>
           </label>
         </div>
 
-        <div className="select">
-          <label>
-            <input
-              type="radio"
-              name="account"
-              value="service-provider"
-              checked={selectedAccountType === 'service-provider'}
-              onChange={handleAccountTypeChange}
-            />
-            Service Provider
-            <div className="selectbar">Offer services to support farmers and buyers.</div>
-          </label>
-        </div>
+       
 
         <button type="button" onClick={handleNext} className="continue-btn">Continue</button>
       </form>
