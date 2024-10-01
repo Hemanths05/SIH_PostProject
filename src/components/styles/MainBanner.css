@@ -1,38 +1,41 @@
+
+
 .main-banner {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Aligns the content to the right */
-  margin-right: 50px; /* Adds margin to the right to provide some spacing */
-  height: calc(100vh - 80px);
-  color: white;
-}
-
-.banner-text {
-  text-align: right; /* Aligns text inside the banner to the right */
-  max-width: 600px;
-  padding: 20px;
-}
-
-.banner-text h1 {
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 48px;
-  color: #200077;
-}
-
-.banner-text p {
-  font-size: 36px;
-  font-weight: 600;
-  color: #FFFFFF;
-}
-
-.cta-button {
-  background-color: #1476cc;
-  border: none;
-  padding: 15px 30px;
-  color: #20207d;
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: 600;
-  margin-top: 20px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 50px;
+    height: calc(100vh - 80px);
+    color: white;
+  }
+  
+  .banner-text {
+    text-align: left;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  .banner-text h1 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    color: #D2FBD0;
+  }
+  
+  .banner-text p {
+    font-size: 36px;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+  
+  .cta-button {
+    background-color: #D2FBD0;
+    border: none;
+    padding: 15px 30px;
+    color: #3F7D20;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
