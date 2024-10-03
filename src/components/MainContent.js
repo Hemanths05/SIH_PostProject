@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/MainContent.css';
 
+/**
+ * MainContent component is a `1st part` of the `multi-step registration form`.
+ * 
+ * This component allows the user to select the *account type*.
+ */
 function MainContent() {
   const [selectedAccountType, setSelectedAccountType] = useState('');
   const navigate = useNavigate();

@@ -1,65 +1,93 @@
+import React, { useState } from "react";
+import { FaLock, FaEnvelope } from "react-icons/fa"; // Importing icons for better UI
+import "./styles/Login.css"; // Import CSS file for styling
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
-import React, { useState } from 'react';
-import { FaLock, FaEnvelope } from 'react-icons/fa'; // Importing icons for better UI
-import './styles/Login.css'; // Import CSS file for styling
+export default function LoginPage() {
+  const navigate = useNavigate();
 
-const LoginPage = () => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
+    accountType: "consumer",
   });
 
   const [formErrors, setFormErrors] = useState({
-    email: '',
-    password: '',
+    emailError: "",
+    passwordError: "",
   });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+    setFormData((oldState) => {
+      const newState = {
+        ...oldState,
+        [name]: value,
+      };
+      console.log(newState);
+      return newState;
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     let errors = {};
-
     // Basic Validation
     if (!formData.email.trim()) {
-      errors.email = 'Email is required';
+      errors.emailError = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = 'Email is invalid';
+      errors.emailError = "Email is invalid";
     }
 
     if (!formData.password.trim()) {
-      errors.password = 'Password is required';
+      errors.passwordError = "Password is required";
     } else if (formData.password.length < 6) {
-      errors.password = 'Password must be at least 6 characters long';
+      errors.passwordError = "Password must be at least 6 characters long";
     }
 
     if (Object.keys(errors).length === 0) {
-      console.log('Form data:', formData); // Handle login (e.g., API call)
-      alert('Logged in successfully!');
+      console.log("Form data:", formData); // Handle login (e.g., API call)
       setFormData({
-        email: '',
-        password: '',
+        ...formData,
+        email: "",
+        password: "",
       });
       setFormErrors({
-        email: '',
-        password: '',
+        emailError: "",
+        passwordError: "",
       });
+      if(formData.accountType === "consumer") {
+      toast.success("Logged in as Consumer!");
+      navigate("/find-schemes");
+      }else {
+        toast.success("Logged in as Post Service Person!");
+        navigate("/population-statistics-dashboard");
+      }
     } else {
       setFormErrors(errors);
+      toast.warning("Enter the required fields");
     }
   };
 
   return (
-    <div className="login-container"> {/* Added unique class here */}
+    <div className="login-container">
+      {" "}
+      {/* Added unique class here */}
       <h2>LOGIN</h2>
       <form onSubmit={handleSubmit}>
         <div>
+          <label>Account Type: </label>
+          <select
+            className="input-container"
+            name="accountType"
+            value={formData.accountType || ""}
+            onChange={handleInputChange}
+          >
+            {" "}
+            <option value="consumer">Consumer</option>
+            <option value="postServiceProvider">Post Service Person</option>
+          </select>
           <label>Email:</label>
           <div className="input-container">
             <FaEnvelope className="icon" />
@@ -71,7 +99,7 @@ const LoginPage = () => {
               onChange={handleInputChange}
             />
           </div>
-          {formErrors.email && <span>{formErrors.email}</span>}
+          {formErrors.emailError && <span>{formErrors.emailError}</span>}
         </div>
         <div>
           <label>Password:</label>
@@ -85,12 +113,10 @@ const LoginPage = () => {
               onChange={handleInputChange}
             />
           </div>
-          {formErrors.password && <span>{formErrors.password}</span>}
+          {formErrors.passwordError && <span>{formErrors.passwordError}</span>}
         </div>
         <button type="submit">Login</button>
       </form>
     </div>
   );
-};
-
-export default LoginPage;
+}
