@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/EmailVerification.css';
 
+/**
+ * Email Verification component is a `2st part` of the `multi-step registration form`.
+ * 
+ * This component allows the user to select the *account type*.
+ */
 const EmailVerification = () => {
   const [formData, setFormData] = useState({
     email: '',
