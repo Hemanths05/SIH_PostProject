@@ -1,3 +1,7 @@
+body{
+  margin: 0px;
+}
+
 /* Container for the layout */
 .container {
   display: flex;
