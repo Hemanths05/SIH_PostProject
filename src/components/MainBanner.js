@@ -7,12 +7,11 @@ const MainBanner = () => {
     <div className="main-banner">
       <div className="banner-text">
         <h1>
-          Echoes of Need: AI-Powered Financial Solutions Aligned with Life
-          Cycles
+        Echoes of Service: AI-Powered Post Solutions Aligned with User Demographics
         </h1>
         <p>
-          Connect farmers and buyers with transparent, secure contract farming
-          agreements.
+        Connect consumers with personalized post office schemes based on age, gender, and income, 
+        while admins access city-wise demographic statistics.
         </p>
         <Link to="/get-started-main-content">
           <button className="cta-button">Get Started</button>
