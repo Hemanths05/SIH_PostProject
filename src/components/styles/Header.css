@@ -1,15 +1,22 @@
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .logo img {
+    max-height: 100px; /* Ensure logo doesn't exceed this height */
+    width: auto; /* Maintain aspect ratio */
   }
   
   .logo h2 {
     color: green;
     font-size: 24px;
+    margin: 0;
   }
   
   nav ul {
@@ -23,13 +30,16 @@
     color: rgb(255, 255, 255);
     font-size: 16px;
   }
+  .login {
+      margin-right: 65px; /* Space between nav and login */
+  }
   
   .login-button {
     background-color: #FFFFFF;
-    border: 1px solid green;
+    border: 1px solid  #351492;
     padding: 10px 20px;
     cursor: pointer;
-    color: #3F7D20;
+    color: black;
   }
   
   .login-button:hover {

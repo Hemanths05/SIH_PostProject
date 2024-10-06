@@ -5,7 +5,7 @@
   left: 0;
   width: 300px; /* Set a fixed width for the sidebar */
   height: 100%; /* Full height of the screen */
-  background-color: #4252ab; /* Sidebar background color */
+  background-color:  #116ac8d8; /* Sidebar background color */
   padding: 20px;
   box-sizing: border-box; /* Include padding in the width */
   display: flex;
@@ -21,7 +21,7 @@
 }
 
 .sidebar h2 {
-  color: green;
+  color:  #200077;
   font-size: 36px; /* Reduced for a cleaner look */
   margin: 20px 0;
   text-align: center;
@@ -38,7 +38,7 @@
 }
 
 .sidebar a {
-  color: #3498db;
+  color:  #200077;
   text-decoration: none;
   font-weight: bold;
 }

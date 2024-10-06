@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom';
 import './styles/MainContent.css';
 
@@ -7,33 +8,27 @@ import './styles/MainContent.css';
  * 
  * This component allows the user to select the *account type*.
  */
-function MainContent() {
-  const [selectedAccountType, setSelectedAccountType] = useState('');
+export default function MainContent() {
   const navigate = useNavigate();
+  
+  const [selectedAccountType, setSelectedAccountType] = useState("consumer");
 
-  const handleAccountTypeChange = (e) => {
-    setSelectedAccountType(e.target.value);
+  const handleAccountTypeChange = (event) => {
+    setSelectedAccountType(event.target.value);
   };
 
   const handleNext = () => {
-    if (selectedAccountType) {
-      // Store selected account type in local storage
-      localStorage.setItem('accountType', selectedAccountType);
-
-      // Navigate to email verification page
-      navigate('/email-verification');
+    if (selectedAccountType === "consumer") {
+      toast.success("Logged in as Consumer!");
+      navigate("/find-schemes");
+    } else {
+      toast.success("Logged in as Post Service Person!");
+      navigate("/population-statistics-dashboard");
     }
   };
 
   return (
     <div className="main-content">
-      <div className="progress-bar">
-        <div className="stage active">1</div>
-        <div className="stage">2</div>
-        <div className="stage">3</div>
-        <div className="stage">4</div>
-        <div className="stage">5</div>
-      </div>
       <h3>Choose Your Account Type:</h3>
       <p>Select the role that best describes your activity on the platform.</p>
       <form className="account-form">
@@ -74,4 +69,4 @@ function MainContent() {
   );
 }
 
-export default MainContent;
+// export default MainContent;
